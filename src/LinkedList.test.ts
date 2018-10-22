@@ -54,12 +54,13 @@ describe('Class: LinkedList', () => {
             it('should be the head node', () => {
                 expect(firstNode.isHead).to.be.true;
             });
-            it('should update the previous head node to no longer be the head node', () => {
+            it('should update the previous head node\'s isHead property to show it is no longer the head node', () => {
                 expect(secondNode.isHead).to.be.false;
                 expect(thirdNode.isHead).to.be.false;
             });
             it('should point to the previous head node', () => {
-                expect(firstNode.next).to.exist.and.eq(secondNode);
+                expect(firstNode.next).to.exist.and.to.eq(secondNode);
+                expect(secondNode.next).to.eq(thirdNode);
             });
         });
     });
@@ -84,7 +85,7 @@ describe('Class: LinkedList', () => {
                 secondNode = linkedList.addToHead('two');
                 firstNode = linkedList.addToHead('one');
             });
-            it('should return the head ListNode', () => {
+            it('should return the first ListNode in the list', () => {
                 expect(linkedList.getHead()).to.exist.and.eq(firstNode);
             });
         });
@@ -116,7 +117,7 @@ describe('Class: LinkedList', () => {
                 linkedList.addToHead('two');
                 linkedList.addToHead('one');
             });
-            it('should throw an error indicating the invalid index if it is less than zero', () => {
+            it('should throw an error indicating the invalid index, when it is less than zero', () => {
                 try {
                     linkedList.get(-5);
                     fail('An error should have been thrown');
@@ -124,7 +125,7 @@ describe('Class: LinkedList', () => {
                     expect(err.message).to.be.eq('Invalid index -5');
                 }
             });
-            it('should throw an error indicating the invalid index if it is greater than the length', () => {
+            it('should throw an error indicating the invalid index, when it is greater than the list length', () => {
                 try {
                     linkedList.get(7);
                     fail('An error should have been thrown');
