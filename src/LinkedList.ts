@@ -3,7 +3,8 @@ import { ListNode } from './ListNode';
 export class LinkedList {
 
     /**
-     * Add the given data value to the beginning of the list.
+     * Create a new ListNode using the given data value and make it 
+     * the beginning of the list.
      * @param value the data value to be contained in the new ListNode.
      * @returns the ListNode that was created, containing the given data value.
      */
