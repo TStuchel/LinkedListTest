@@ -19,13 +19,13 @@ describe('Class: LinkedList', () => {
                 linkedList = new LinkedList();
                 firstNode = linkedList.addToHead('one');
             });
-            it('should create and return a new ListNode that', () => {
+            it('should create and return a new ListNode', () => {
                 expect(firstNode).toBeInstanceOf(ListNode);
             });
             it('should have a value equal to the given value', () => {
                 expect(firstNode.value).toEqual('one');
             });
-            it('should be the head node', () => {
+            it('should be the new head node', () => {
                 expect(firstNode.isHead).toBe(true);
             });
             it('should point to null', () => {
@@ -41,21 +41,22 @@ describe('Class: LinkedList', () => {
                 secondNode = linkedList.addToHead('two');
                 firstNode = linkedList.addToHead('one');
             });
-            it('should create and return a new ListNode that', () => {
+            it('should create and return a new ListNode', () => {
                 expect(firstNode).toBeInstanceOf(ListNode);
             });
             it('should have a value equal to the given value', () => {
                 expect(firstNode.value).toEqual('one');
             });
-            it('should be the head node', () => {
+            it('should be the new head node', () => {
                 expect(firstNode.isHead).toBe(true);
             });
-            it('should update the previous head node to no longer be the head node', () => {
+            it('should update the previous head node\'s isHead property to show it is no longer the head node', () => {
                 expect(secondNode.isHead).toBe(false);
                 expect(thirdNode.isHead).toBe(false);
             });
             it('should point to the previous head node', () => {
                 expect(firstNode.next).toBe(secondNode);
+                expect(secondNode.next).toBe(thirdNode);
             });
         });
     });
@@ -80,7 +81,7 @@ describe('Class: LinkedList', () => {
                 secondNode = linkedList.addToHead('two');
                 firstNode = linkedList.addToHead('one');
             });
-            it('should return the head ListNode', () => {
+            it('should return the first ListNode in the list', () => {
                 expect(linkedList.getHead()).toBeTruthy();
                 expect(linkedList.getHead()).toBe(firstNode);
             });
@@ -113,7 +114,7 @@ describe('Class: LinkedList', () => {
                 linkedList.addToHead('two');
                 linkedList.addToHead('one');
             });
-            it('should throw an error indicating the invalid index if it is less than zero', () => {
+            it('should throw an error indicating the invalid index, when it is less than zero', () => {
                 try {
                     linkedList.get(-5);
                     fail('An error should have been thrown');
@@ -121,7 +122,7 @@ describe('Class: LinkedList', () => {
                     expect(err.message).toEqual('Invalid index -5');
                 }
             });
-            it('should throw an error indicating the invalid index if it is greater than the length', () => {
+            it('should throw an error indicating the invalid index, when it is greater than the list length', () => {
                 try {
                     linkedList.get(7);
                     fail('An error should have been thrown');
@@ -160,7 +161,7 @@ describe('Class: LinkedList', () => {
                 linkedList.addToHead('one');
             });
             it('should return an array', () => {
-                expect(linkedList.values()).toBeInstanceOf(Array)
+                expect(linkedList.values()).toBeInstanceOf(Array);
             });
             it('should return an array with the list items', () => {
                 const values: Array<string> = linkedList.values();

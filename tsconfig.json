@@ -7,7 +7,7 @@
         "preserveConstEnums": true,
         "outDir": "dist/",
         "sourceMap": true,
-        "types" : [ "node", "core-js" ],
+        "types" : [ "node", "core-js", "jest", "mocha" ],
         "lib" : [ "es2016", "dom"],
         "experimentalDecorators": true
 
