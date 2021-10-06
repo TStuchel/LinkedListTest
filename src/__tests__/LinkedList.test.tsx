@@ -1,4 +1,3 @@
-import { } from 'ts-jest';
 import { LinkedList } from '../LinkedList';
 import { ListNode } from '../ListNode';
 
@@ -10,11 +9,11 @@ describe('Class: LinkedList', () => {
     let secondNode: ListNode;
     let thirdNode: ListNode;
 
-    // addFirst()
+    // addToHead()
     describe('function: addToHead()', () => {
 
         //
-        describe('Given an empty list, when a value is added to head of the of the list, then it', () => {
+        describe('Given an empty list, when a value is added to the head of the of the list, then it', () => {
             beforeEach(() => {
                 linkedList = new LinkedList();
                 firstNode = linkedList.addToHead('one');
@@ -34,7 +33,7 @@ describe('Class: LinkedList', () => {
         });
 
         //
-        describe('Given a populated list, when a value is added to head of the list, then it', () => {
+        describe('Given a populated list, when a value is added to the head of the list, then it', () => {
             beforeEach(() => {
                 linkedList = new LinkedList();
                 thirdNode = linkedList.addToHead('three');

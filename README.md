@@ -16,7 +16,6 @@ A project to assess basic programming aptitude.
 4) Install dependencies (from the terminal/command line within the /LinkedListTest directory)
 ```
 npm install -g nyc   <-- Install nyc globally (only for Windows)
-npm install -g mocha <-- Install mocha globally (only for Windows)
 npm install          <-- Install dependencies
 npm run test         <-- Launch unit tests (Mac/Linux)
 npm run testwin      <-- Launch unit tests (Windows)
